@@ -1,0 +1,981 @@
+{
+	"info": {
+		"_postman_id": "c0b0f85a-fcef-470f-af37-207e998074ae",
+		"name": "AdminLTE (Main)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16738596",
+		"_collection_link": "https://api-test-fullstack-vn.postman.co/workspace/AdminLTE~f3058c05-819e-4259-a7ce-3b235a77f2ed/collection/16738596-c0b0f85a-fcef-470f-af37-207e998074ae?action=share&source=collection_link&creator=16738596"
+	},
+	"item": [
+		{
+			"name": "Auth Admin",
+			"item": [
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"vanmanh.dut@yopmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTcwMzc2MTU3OCwiZXhwIjoxNzA0OTcxMTc4LCJuYmYiOjE3MDM3NjE1NzgsImp0aSI6InFNb0VoamtNZElkdWdxM1EiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.gAi8Kjy2ne-qepEnGtvwnd6RlHACsV6jKY76_Zmjlyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/admin/profile",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTlcL2FwaVwvYWRtaW5cL2xvZ2luIiwiaWF0IjoxNjk2MzA0NTc0LCJleHAiOjE2OTYzMDgxNzQsIm5iZiI6MTY5NjMwNDU3NCwianRpIjoiUko3V0pOSkZhdk9TMGxaeCIsInN1YiI6MSwicHJ2IjoiZGY4ODNkYjk3YmQwNWVmOGZmODUwODJkNjg2YzQ1ZTgzMmU1OTNhOSJ9.N-2i2YhSyZDGKaj4kU5RHpLVEisCW0TF1xGLkjhCSUk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC92YW5tYW5oLmF6dXJld2Vic2l0ZXMubmV0XC9hcGlcL2FkbWluXC9sb2dpbiIsImlhdCI6MTcwMTEwMTY0OSwiZXhwIjoxNzAyMzExMjQ5LCJuYmYiOjE3MDExMDE2NDksImp0aSI6ImdhcEtuUU9VSlFDZVZiVXoiLCJzdWIiOjEsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.Ulk5YKu9F66DzWChi6RmKQkwtRmbxjNr9YtSLOUAots",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"current_password\":\"123456\",\r\n    \"new_password\":\"123456\",\r\n    \"new_password_confirmation\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/change-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC92YW5tYW5oLmF6dXJld2Vic2l0ZXMubmV0XC9hcGlcL2FkbWluXC9sb2dpbiIsImlhdCI6MTY5OTMwNDI3MywiZXhwIjoxNzAwNTEzODczLCJuYmYiOjE2OTkzMDQyNzMsImp0aSI6IkkxaW5zNG1iUVQ1eEhsc0giLCJzdWIiOjEsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.ueheZgDf6-um4isxNf05oBQLUW_8EuIOF1sOBHOOdgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/Downloads/Infinity/380703311_17957454353653756_6089759253227406351_n.jpg"
+								},
+								{
+									"key": "email",
+									"value": "vanmanh.dut@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "TT Huế Pro - Việt Nam Pro 2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "date_of_birth",
+									"value": "2001-11-12",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "0971404399",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Nguyễn Văn Mạnh ",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/admin/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Code Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"vanmanh.dut@yopmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/forgot-pw-sendcode",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"forgot-pw-sendcode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Form Update Forgot PW",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"new_password\" : \"vanmanh.dut\",\r\n    \"new_password_confirmation\" : \"vanmanh.dut\",\r\n    \"token\" : \"249HkzpYeCoh9Q7NtkgEeremAVtETBII\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/forgot-update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"forgot-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\" : \"R7tIBRcSt9et71EBD4ZoPVgEVnKz6s80\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/verify-email",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"verify-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC92YW5tYW5oLmF6dXJld2Vic2l0ZXMubmV0XC9hcGlcL2FkbWluXC9sb2dpbiIsImlhdCI6MTY5OTQ2NjMzNCwiZXhwIjoxNzAwNjc1OTM0LCJuYmYiOjE2OTk0NjYzMzQsImp0aSI6ImJFWHExMWNiMWdmNTJidmIiLCJzdWIiOjEsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.JDVdnK8zXlQZBotR-n1eIVi56yddnuAKAHY_vxWXNqI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\" : \"\",\r\n    \"paginate\" : 6, \r\n    \"page\" : 1,\r\n    \"role\" : \"\",\r\n    \"is_accept\": \"1\",  // \"0\" , \"1\" , \"both\"\r\n    \"typesort\" : \"name\" , // new , name \r\n    \"sortlatest\" : true  // true , false \r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/all-user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"all-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hZG1pblwvbG9naW4iLCJpYXQiOjE2OTk0NTQzMTcsImV4cCI6MTcwMDY2MzkxNywibmJmIjoxNjk5NDU0MzE3LCJqdGkiOiJBVjVKcVFvR0F2S2ZwSGZ2Iiwic3ViIjoxLCJwcnYiOiJkZjg4M2RiOTdiZDA1ZWY4ZmY4NTA4MmQ2ODZjNDVlODMyZTU5M2E5In0.hnsdxoYUt5fDxPXBLWB7bvZ9Dw9t70Oa-Z96w8UX0s8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\" : \"\",\r\n    \"paginate\" : 6, \r\n    \"page\" : 1,\r\n    \"role\" : \"\",\r\n    \"typesort\" : \"new\" , // new , name \r\n    \"sortlatest\" : true  // true , false \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/all-admin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"all-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Accpet User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTlcL2FwaVwvYWRtaW5cL2xvZ2luIiwiaWF0IjoxNjk3NzkzNTczLCJleHAiOjE2OTkwMDMxNzMsIm5iZiI6MTY5Nzc5MzU3MywianRpIjoiQmEzQ2RJU3dYc3JNUnFNZyIsInN1YiI6MSwicHJ2IjoiZGY4ODNkYjk3YmQwNWVmOGZmODUwODJkNjg2YzQ1ZTgzMmU1OTNhOSJ9.1Qmn9QgjaBLlsrwZwsrrZH1C_JjSpZt6Gdp34qK-swI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"is_accept\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/change-accept/17",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"change-accept",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hZG1pblwvbG9naW4iLCJpYXQiOjE3MDA2NTI1OTMsImV4cCI6MTcwMTg2MjE5MywibmJmIjoxNzAwNjUyNTkzLCJqdGkiOiJmQkFvUm9sVzFZUHdsMGZtIiwic3ViIjoxLCJwcnYiOiJkZjg4M2RiOTdiZDA1ZWY4ZmY4NTA4MmQ2ODZjNDVlODMyZTU5M2E5In0.70YZUFZsFGm4n2ERSPaJnguZaaT7uKqZyhMPzDwwA0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"thuyduong1235@yopmail.com\",\r\n    \"name\" : \"Trần Thị Thùy Dương\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/add-admin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"add-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC92YW5tYW5oLmF6dXJld2Vic2l0ZXMubmV0XC9hcGlcL2FkbWluXC9sb2dpbiIsImlhdCI6MTY5OTA3MDMwMCwiZXhwIjoxNzAwMjc5OTAwLCJuYmYiOjE2OTkwNzAzMDAsImp0aSI6Inc0ZHlMSGVQTFp4cFg1Mk8iLCJzdWIiOjEsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.e22_0iuer7qEViyG4CFh_IKMYGkfe8pEardbOyMup2M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/8",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTlcL2FwaVwvYWRtaW5cL2xvZ2luIiwiaWF0IjoxNjk2NTI3NDg0LCJleHAiOjE2OTY1MzEwODQsIm5iZiI6MTY5NjUyNzQ4NCwianRpIjoiY0JVcnd6UzBEM3Z5YXRaOCIsInN1YiI6MSwicHJ2IjoiZGY4ODNkYjk3YmQwNWVmOGZmODUwODJkNjg2YzQ1ZTgzMmU1OTNhOSJ9.7dxs70x9ksqQtSv-BFRNXUUvq6BgUWzpD7vtX-g1X-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\":\"superadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth User",
+			"item": [
+				{
+					"name": "User Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Nguyễn Văn Mạnh Hero",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "herovanmanh@yopmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "herovanmanh",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "herovanmanh",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "postman-cloud:///1eea5976-b2f7-40e0-b412-680e2f1ad32a"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/user/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"duyentran@yopmail.com\",\r\n    \"password\":\"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTcwMzc2MTU3OCwiZXhwIjoxNzA0OTcxMTc4LCJuYmYiOjE3MDM3NjE1NzgsImp0aSI6InFNb0VoamtNZElkdWdxM1EiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.gAi8Kjy2ne-qepEnGtvwnd6RlHACsV6jKY76_Zmjlyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/user/profile",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC91c2VyXC9sb2dpbiIsImlhdCI6MTY5ODU3NzE4MywiZXhwIjoxNjk5Nzg2NzgzLCJuYmYiOjE2OTg1NzcxODMsImp0aSI6ImFXdk5qQTlaSEViaWFtY3AiLCJzdWIiOjEwLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.WldtKfLTrgtVOfllUVc4rOh1bedK0BstN4YSpqV0Kf8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "vannghia99123@yopmail.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "vannghia99123",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Nguyễn Văn Mạnh Pro Vip vanmanh9969",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "097140437119",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "Hà Nội - Việt Nam Pro VIP9",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/Downloads/Infinity/12b1.jpg",
+									"disabled": true
+								},
+								{
+									"key": "date_of_birth",
+									"value": "2001-09-11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/infor-user/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"infor-user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTlcL2FwaVwvdXNlclwvbG9naW4iLCJpYXQiOjE2OTU1MzQxMzMsImV4cCI6MTY5NTUzNzczMywibmJmIjoxNjk1NTM0MTMzLCJqdGkiOiJsSnRPVGdMN204UWVZaTF3Iiwic3ViIjoyLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jgrGcOLp0SpHTUdFzLs8OaSizWWN7jGFK6f7E3lHtqQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/user/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTlcL2FwaVwvdXNlclwvbG9naW4iLCJpYXQiOjE2OTYzMjYxMzEsImV4cCI6MTY5NjMyOTczMSwibmJmIjoxNjk2MzI2MTMxLCJqdGkiOiJ6V1F6WlRGWUpQUzVaTlpvIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ZQ-fJbbRkN_VOi8b7j9YZosnA5LEAI-Sf3IrV7-e5Is",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"current_password\":\"vanmanhpro2\",\r\n    \"new_password\":\"nguyenvanmanh2001it1\",\r\n    \"new_password_confirmation\":\"nguyenvanmanh2001it1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/change-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Password for GG User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTlcL2FwaVwvaW5mb3ItdXNlclwvYXV0aG9yaXplZFwvZ29vZ2xlXC9jYWxsYmFjayIsImlhdCI6MTY5NjM1NTQxMiwiZXhwIjoxNjk2MzU5MDEyLCJuYmYiOjE2OTYzNTU0MTIsImp0aSI6ImlOeExkaHFETW1VZVJMaWYiLCJzdWIiOjEzLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0ok-lN24IHPVlFb1rXSDPyk47RCO1X_I3TDMltWOA5A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"new_password\":\"buongtaynhenhang99\",\r\n    \"new_password_confirmation\":\"buongtaynhenhang99\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/infor-user/create-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"infor-user",
+								"create-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Infor User Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// note : {{host}}/user/infor-user/{id} với {id} = id_user, id_doctor , id_hospital khi được trả về ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/infor-user/9",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"infor-user",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Firebase Login Google",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"109722727162244899994\",\r\n    \"email\" : \"vanmanh99966993@yopmail.com\",\r\n    \"name\" : \"Nguyễn Văn Mạnh Pro Vip\",\r\n    \"avatar\" : \"https://lh3.googleusercontent.com/a/ACg8ocI6kqOnY2Bd71erJ9h58tNc00PXNFVoWJhPc3I62veDkQ=s83-c-mo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/infor-user/login-google",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"infor-user",
+								"login-google"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Firebase Login Facebook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1244899923123394\",\r\n    \"email\" : \"vanmanh9996anmanh999622226993@yopmail.com\",\r\n    \"name\" : \"Nguyễn Văn Mạnh Pro Vip\",\r\n    \"avatar\" : \"https://lh3.googleusercontent.com/a/ACg8ocI6kqOnY2Bd71erJ9h58tNc00PXNFVoWJhPc3I62veDkQ=s83-c-mo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/infor-user/login-facebook",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"infor-user",
+								"login-facebook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Code Forgot Password Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"benhviengiadinh@yopmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/forgot-pw-sendcode",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"forgot-pw-sendcode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Form Update Forgot PW Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"new_password\" : \"benhviengiadinh\",\r\n    \"new_password_confirmation\" : \"benhviengiadinh\",\r\n    \"token\" : \"keuoDJ2FIhxymjFincG7XowhisAmKEJm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/forgot-update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"forgot-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\" : \"ynoNwmdrWf5D894kEa28O3vk0o9HvgJt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/verify-email",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"verify-email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
