@@ -7,6 +7,7 @@ import NProgress from 'nprogress';
 import AdminMain from '@/components/admin/AdminMain'
 import AdminDashboard from '@/components/admin/admin-dashboard/AdminDashboard'
 import ManageManager from '@/components/admin/admin-dashboard/manage-manager/ManageManager'
+import ManageProduct from '@/components/admin/admin-dashboard/manage-product/ManageProduct'
 import AdminLogin from '@/components/admin/auth/AdminLogin'
 
 // user 
@@ -56,7 +57,7 @@ const loggedUser = (to, from, next) => {
 // check amdin logged 
 const loggedAdmin = (to, from, next) => {
     const user = localStorage.getItem('admin');
-    if (user) next({ name: 'ManageManager' });
+    if (user) next({ name: 'ManageProduct' });
     else next();
 };
 
@@ -92,7 +93,10 @@ const routes = [
                 name: 'AdminDashboard',
                 component: AdminDashboard,
                 beforeEnter: authAdmin,
-                children: [{ path: 'manage-manager', name: 'ManageManager', component: ManageManager }]
+                children: [
+                    { path: 'manage-manager', name: 'ManageManager', component: ManageManager },
+                    { path: 'manage-product', name: 'ManageProduct', component: ManageProduct }
+                ]
             }
         ]
     },

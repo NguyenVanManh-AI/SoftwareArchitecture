@@ -92,7 +92,7 @@ export default {
         }
     },
     setup() {
-        document.title = "Flowers Recognition | AI System";
+        document.title = "Flowers Recognition | Software Pro";
     },
     async mounted() {
         this.user = JSON.parse(localStorage.getItem('user'));

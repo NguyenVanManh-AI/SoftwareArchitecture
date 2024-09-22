@@ -167,7 +167,7 @@ export default {
         }
     },
     setup() {
-        document.title = "Account Setting | AI System";
+        document.title = "Account Setting | Software Pro";
     },
     async mounted() {
         this.user = JSON.parse(localStorage.getItem('user'));

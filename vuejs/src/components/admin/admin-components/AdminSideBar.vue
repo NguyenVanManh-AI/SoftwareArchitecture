@@ -11,19 +11,22 @@
       <div id="my-scroll" style="margin: 0px 14px 0 14px;">
         <ul class="nav-list" style="overflow: visible;">
           <span>
-            <li>
+            <!-- <li>
               <router-link class="links" data-path="manage-manager" :to="{ name: 'ManageManager' }"><i
                   class="fa-solid fa-user-gear"></i><span class="links_name">Manager Account</span></router-link>
+            </li> -->
+            <li>
+              <router-link class="links" data-path="manage-product" :to="{ name: 'ManageProduct' }"><i class="fa-brands fa-dropbox"></i><span class="links_name">Manager Product</span></router-link>
             </li>
           </span>
         </ul>
       </div>
       <div class="profile">
         <div class="profile-details">
-          <img id="avatar_sidebar" :src="admin.avatar ? admin.avatar : require('@/assets/avatar-admin.jpg')"
+          <img id="avatar_sidebar" :src="require('@/assets/avatar.jpg')"
             alt="Avatar Admin">
           <div class="name_job">
-            <div class="name">Admin AI System</div>
+            <div class="name">Admin System</div>
             <div class="job"><i class="fa-solid fa-user-shield"></i> admin</div>
           </div>
         </div>

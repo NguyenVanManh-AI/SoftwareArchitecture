@@ -92,7 +92,7 @@ export default {
         }
     },
     setup() {
-        document.title = "Alzheimers Recognition | AI System";
+        document.title = "Alzheimers Recognition | Software Pro";
     },
     async mounted() {
         this.user = JSON.parse(localStorage.getItem('user'));

@@ -2,7 +2,7 @@
   <div class="sidebar" :class="isUserOpened ? 'open' : ''" :style="cssVars" ref="sidebar">
     <div class="logo-details" style="margin: 10px 14px 0 14px;">
       <img src="@/assets/logo.png" alt="menu-logo" class="menu-logo icon" style="" @click="compadmin">
-      <div class="logo_name" @click="compadmin"> AI System </div>
+      <div class="logo_name" @click="compadmin"> Software Pro </div>
       <i style="color: var(--user-color);" class="bx" :class="isUserOpened ? 'bx-menu-alt-right' : 'bx-menu'" id="btn"
         @click="openSiderbar"></i>
     </div>

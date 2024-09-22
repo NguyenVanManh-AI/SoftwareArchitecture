@@ -58,7 +58,7 @@ export default {
 			},
 			isShow: false,
 			loginAdmin: {
-				email: 'admin123@gmail.com',
+				email: 'admin@yopmail.com',
 				password: '123456'
 			},
 			resetPassword: {
@@ -71,31 +71,26 @@ export default {
 		}
 	},
 	setup() {
-		document.title = "Admin Login | AI System";
+		document.title = "Admin Login | Software Pro";
 	},
 	mounted() {
 		var appMain = window.document.getElementById('appMain');
 		appMain.style.paddingLeft = '0px'
 	},
 	methods: {
-		login: function () {
-			AdminRequest.post('admin/login', this.loginAdmin, true)
-				.then(data => {
-					this.admin = data.data;
-					window.localStorage.setItem('admin', JSON.stringify(this.admin));
-					data.messages.forEach(message => {
-						emitEvent('eventSuccess', message);
-					});
-					this.$router.push({ name: 'ManageManager' });
-				})
-				.catch(error => {
-					if (error.errors) this.errors = error.errors;
-					else for (let key in this.errors) this.errors[key] = null;
-
-					error.messages.forEach(message => {
-						emitEvent('eventError', message);
-					});
-				})
+		login: async function () {
+            try {
+                const { data, message } = await AdminRequest.post('admin/login', this.loginAdmin, true);
+				this.admin = data;
+				window.localStorage.setItem('admin', JSON.stringify(this.admin));
+                emitEvent('eventSuccess', message);
+				this.$router.push({ name: 'ManageProduct' });
+            }
+			catch (error) {
+                if (error.errors) this.errors = error.errors;
+                else for (let key in this.errors) this.errors[key] = null;
+                if (error.messages) emitEvent('eventError', error.messages[0]);
+            }
 		}
 	},
 }

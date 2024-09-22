@@ -258,7 +258,7 @@ export default {
     },
 
     setup() {
-        document.title = "Manages Content | AI System"
+        document.title = "Manages Content | Software Pro"
     },
 
     mounted() {
