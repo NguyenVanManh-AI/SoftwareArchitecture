@@ -76,6 +76,11 @@
                                             class="deleteRecord" @click="selectedRecord(record)">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
+                                        <button data-toggle="modal" data-target="#viewRecord"
+                                            v-tippy="{ content: 'View Product'}"
+                                            class="viewRecord" @click="selectedRecord(record)">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
                                         </div>
                                     </div>
                                 </td>
@@ -90,8 +95,8 @@
                     </paginate>
                 </div>
                 <DeleteRecord :course_id="course_id" :recordSelected="recordSelected"></DeleteRecord>
-                <!-- <LockRecord :recordSelected="recordSelected"></LockRecord>
-                <ViewRecord :recordSelected="recordSelected"></ViewRecord> -->
+                <!-- <LockRecord :recordSelected="recordSelected"></LockRecord> -->
+                <ViewRecord :recordSelected="recordSelected"></ViewRecord> 
                 <AddRecord :course_id="course_id"></AddRecord>
                 <UpdateRecord :recordSelected="recordSelected" :course_id="course_id"></UpdateRecord>
             </div>
@@ -107,7 +112,7 @@ import TableLoading from '@/components/common/TableLoading'
 import _ from 'lodash';
 import DeleteRecord from '@/components/admin/admin-dashboard/manage-product/DeleteRecord.vue'
 // import LockRecord from '@/components/admin/admin-dashboard/manage-product/LockRecord.vue'
-// import ViewRecord from '@/components/admin/admin-dashboard/manage-product/ViewRecord.vue'
+import ViewRecord from '@/components/admin/admin-dashboard/manage-product/ViewRecord.vue'
 import AddRecord from '@/components/admin/admin-dashboard/manage-product/AddRecord.vue'
 import UpdateRecord from '@/components/admin/admin-dashboard/manage-product/UpdateRecord.vue'
 // import UpdateInformationChannel from '@/components/user/member-account/UpdateInformationChannel.vue'
@@ -121,7 +126,7 @@ export default {
         TableLoading,
         DeleteRecord,
         // LockRecord,
-        // ViewRecord,
+        ViewRecord,
         AddRecord,
         UpdateRecord,
         // UpdateInformationChannel

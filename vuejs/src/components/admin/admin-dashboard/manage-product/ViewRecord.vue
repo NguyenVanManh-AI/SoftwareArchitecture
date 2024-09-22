@@ -6,31 +6,15 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
-                            Xem chi tiết khóa học </h5>
+                            View Detail Product </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" class="text-danger"><i class="fa-regular fa-circle-xmark"></i></span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p><label for="exampleInputEmail1"><strong>Tên Khóa học</strong></label> : {{ recordSelected.course_name }}</p>
-                        <p><label for="exampleInputEmail1"><strong>Giá khóa học</strong></label> : {{ recordSelected.cource_price }} VNĐ</p>
-                        <div class="mb-2">
-                            <label for="exampleInputEmail1"><strong>Giới thiệu về khóa học</strong></label>
-                            <p>{{ recordSelected.course_introduce }}</p>
-                        </div>
-                        <div class="cover-course mb-2">
-                            <label for="exampleInputEmail1"><strong>Ảnh bìa</strong></label>
-                            <div class="inner-cover-course">
-                                <img :src="recordSelected.course_image ? recordSelected.course_image : require('@/assets/admin/image-default.jpg')" alt="">
-                            </div>
-                        </div>
-                        <div class="course-video mb-2">
-                            <label><strong>Video trailer</strong></label>
-                            <!-- sử dụng v-if để chỉ khi có record được select -->
-                            <iframe v-if="recordSelected.course_trailer" style="width: 100%;height: 300px;" :src="this.$getYouTubeEmbedUrl(recordSelected.course_trailer)" frameborder="0" allowfullscreen></iframe>
-                            <!-- <iframe width="200" :src="this.$getYouTubeEmbedUrl(recordSelected.course_trailer)" frameborder="0" allowfullscreen></iframe> -->
-                        </div>
-
+                        <p><label for="exampleInputEmail1"><strong>Name Product</strong></label> : {{ recordSelected.name }}</p>
+                        <p><label for="exampleInputEmail1"><strong>Price Product </strong></label> : ${{ recordSelected.price }}</p>
+                        <p><label for="exampleInputEmail1"><strong>Description Product </strong></label> : {{ recordSelected.description }}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" ref="closeButton"
