@@ -5,7 +5,7 @@ namespace App\Repositories;
 /**
  * Interface ExampleRepository.
  */
-interface UserInterface extends RepositoryInterface
+interface ProductInterface extends RepositoryInterface
 {
     public function getUser($emailOrUsername);
 

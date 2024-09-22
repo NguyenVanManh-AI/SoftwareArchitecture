@@ -12,9 +12,13 @@ class CheckRole
         // 'role' => \App\Http\Middleware\CheckRole::class,
         // Tại vì admins và users đều có cột role nên dùng chung luôn , không cần tách ra nữa
         // Dùng file này để dùng chung cho middleware role cho cả user và admin
-        // $admin = Auth::guard('admin_api')->user();
+        $admin = Auth::guard('admin_api')->user();
         $user = Auth::guard('user_api')->user();
         // $user = Auth::user(); // ta sẽ dùng Auth::user() , thay vì tách ra admin_api hay user_api
+
+        if($admin) {
+            $user = $admin;
+        }
         if (!$user) {
             // return response('Unauthorized', 401); // web 
 

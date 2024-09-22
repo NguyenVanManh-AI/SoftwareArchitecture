@@ -24,8 +24,8 @@ class AdminsSeeder extends Seeder
 
         $admins = [
             [
-                'email' => 'vanmanh.dut@yopmail.com',
-                'name' => 'Nguyễn Văn Mạnh',
+                'email' => 'admin@yopmail.com',
+                'name' => 'admin',
                 'role' => 'manager',
             ],
 

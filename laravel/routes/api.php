@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AdminController;
+use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Http\Request;
@@ -62,5 +63,15 @@ Route::prefix('comment')->controller(CommentController::class)->group(function (
     Route::get('article/{id}', 'commentOfArticle');
 });
 
+// Comments
+Route::prefix('product')->controller(ProductController::class)->group(function () {
+    Route::middleware(['check.auth:admin_api', 'role:manager,superadmin'])->group(function () {
+        Route::get('get/{id}', 'get');
+        Route::get('all', 'all');
+        Route::post('add', 'add');
+        Route::post('update/{id}', 'update');
+        Route::get('delete/{id}', 'delete');
+    });
+});
 
 // check.auth:user_api => ['check.auth:user_api', 'role:user']  (thêm ngoặc vuông nếu có nhiều middleware)
